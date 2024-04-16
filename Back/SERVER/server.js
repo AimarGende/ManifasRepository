@@ -28,6 +28,6 @@ const io = socketio(expressServer, {
     },
 });
 
-io.on('connection', socket=>{
+io.on('connection', socket => {
 
 });

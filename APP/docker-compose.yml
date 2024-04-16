@@ -4,8 +4,8 @@ services:
   mysql:
     image: mysql:latest
     environment:
-      MYSQL_DATABASE: 'Aimar'
-      MYSQL_USER: 'Aimar'
+      MYSQL_DATABASE: 'Manifas'
+      MYSQL_USER: 'usuario'
       MYSQL_PASSWORD: '12345678'
       MYSQL_ROOT_PASSWORD: 'password'
     ports:

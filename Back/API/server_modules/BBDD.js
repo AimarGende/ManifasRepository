@@ -5,7 +5,7 @@ let options = {
     host: 'localhost', //donde se hostea la base, por defecto buscara el puerto 3306
     user: 'root', //usuario con el que se va a conectar a la base
     password: 'root', //contraseña del usuario con el que se va a conectar a la base
-    database: '5gincidencias',//Nombre de BBDD
+    database: '',//Nombre de BBDD
 };
 
 /**

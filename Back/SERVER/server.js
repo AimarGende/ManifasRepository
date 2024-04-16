@@ -29,5 +29,5 @@ const io = socketio(expressServer, {
 });
 
 io.on('connection', socket => {
-
+    //Eventos que recibira el server y como respondera a ellos
 });

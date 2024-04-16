@@ -25,7 +25,7 @@ services:
   Server:
           image:  node:latest
           ports:
-          - "8083:8000"
+          - "8083:3000"
           volumes:
             - ../Back/SERVER:/app
           depends_on:
@@ -34,7 +34,7 @@ services:
   API:
           image:  node:latest
           ports:
-          - "8086:8000"
+          - "8086:3000"
           volumes:
             - ../Back/API:/app
           depends_on:

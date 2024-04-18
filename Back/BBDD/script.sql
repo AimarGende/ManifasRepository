@@ -1,1 +1,1 @@
--- usuarios, tokens, intereses, grupos, protestas
+-- usuarios, tokens, intereses, grupos, protestas, mensajes(log o tabla),

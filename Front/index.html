@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,67 @@
     <link rel="stylesheet" href="styles/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.min.js"></script>
 </head>
+
 <body>
-    <h1>marius</h1>
+
+    <div id="header">
+    </div>
+
+
+    <div id="expert-chat">
+        <h1 id="expert-chat-head">Chat</h1>
+        <div id="upcoming-messages" class="hidden">
+            <div id="messages">
+                <p style="display: none;" id="someone-writing"></p>
+            </div>
+            <div id="text-box">
+                <form id="expert-chat-form">
+                    <input type="text" id="user-message">
+                    <input type="submit" id="send-message" value="Send">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let upcomingMessages = document.getElementById('upcoming-messages');
+        let textBox = document.getElementById('text-box')
+        let messagesContainer = document.getElementById('messages');
+        let expertChatHead = document.getElementById('expert-chat-head');
+        let expertChatForm = document.getElementById('expert-chat-form')
+        let userName = 'Usuario'
+
+        expertChatHead.addEventListener('click', () => {
+            toggleMenu()
+        })
+
+        function toggleMenu() {
+            upcomingMessages.classList.toggle('hidden');
+            expertChatHead.classList.toggle('hidden');
+            messagesContainer.classList.toggle('hidden');
+            textBox.classList.toggle('hidden');
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+
+        expertChatForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            if (event.target.children[0].value !== '') {
+                let separatedUser = userName.split('@')[0];
+                let mensaje = event.target.children[0].value;
+                let messageInfo = {
+                    user: separatedUser,
+                    message: mensaje,
+                };
+                let mensajePropio = document.createElement('p');
+                mensajePropio.innerHTML = `<b>${separatedUser}</b>: ${mensaje}`;
+                event.target.children[0].value = '';
+                messagesContainer.appendChild(mensajePropio);
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }
+        });
+
+    </script>
 </body>
+
 </html>

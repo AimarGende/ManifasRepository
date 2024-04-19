@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
     overflow-x: hidden;
     background-color: #f3fbf7;
@@ -5,27 +12,99 @@ body {
 
 /*Logout*/
 header {
+    display: flex;
+    justify-content: space-between;
     position: relative;
     top: 0;
     left: 0;
-    margin-left: -0.9%;
-    margin-top: -0.9%;
     width: 102%;
     height: 100px;
-    background-color: #003C43;
+    background-color: #135D66;
 }
 
 #logout {
     font-size: 25px;
     color: white;
-    text-align: right;
     padding-right: 3%;
     cursor: pointer;
+    display: inline-block;
+    margin-top: 2%;
 }
 
-/*content*/
+/*main*/
+#main{
+    width: 100%;
+    height: 2000px;
+}
 /*footer*/
 
+.pie-pagina{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+    background-color: #135D66;
+    z-index: 0;
+}
+.pie-pagina .grupo-1{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:50px;
+    padding: 20px 0px;
+}
+.pie-pagina .grupo-1 .box figure{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pie-pagina .grupo-1 .box figure img{
+    width: 250px;
+}
+.pie-pagina .grupo-1 .box h2{
+    color: #fff;
+    font-size: 20px;
+}
+.pie-pagina .grupo-1 .box p{
+    color: #efefef;
+    margin-bottom: 10px;
+}
+.pie-pagina .grupo-1 .red-social a{
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    margin-right: 10px;
+    background-color: #003C43;
+    text-align: center;
+    transition: all 300ms ease;
+}
+.pie-pagina .grupo-1 .red-social a:hover{
+    color: aqua;
+}
+.pie-pagina .grupo-2{
+    background-color: #003C43;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+}
+.pie-pagina .grupo-2 small{
+    font-size: 15px;
+}
+@media screen and (max-width:800px){
+    .pie-pagina .grupo-1{
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap:30px;
+        padding: 35px 0px;
+    }
+}
 /*Chat messages*/
 #upcoming-messages {
     width: 400px;
@@ -33,6 +112,7 @@ header {
     border: 1px solid #ccc;
     transition: height 0.5s ease-out;
     transform: translateY(0.1%);
+    margin-bottom: -3.6%;
 }
 
 #upcoming-messages.hidden {
@@ -42,20 +122,22 @@ header {
 }
 
 #expert-chat {
+    z-index: 1;
     position: fixed;
-    bottom: 0.25%;
     right: 0%;
+    bottom: 0%;
+    right: -1;
 }
 
 #expert-chat-head {
-    padding-top: 10px;
+    padding-top: 4px;
+    padding-bottom: 12px;
     color: white;
-    background-color: #003C43;
+    background-color: #135D66;
     border: solid rgb(15, 15, 24) 1px;
-    margin-bottom: -0.6%;
     text-align: center;
     width: 400px;
-    height: 50px;
+    height: 60px;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
     cursor: pointer;
@@ -71,7 +153,7 @@ header {
 
 #messages.hidden {
     height: 89%;
-    width: 98%;
+    width: 99%;
     padding: 1%;
     overflow-y: auto;
     overflow-x: hidden;
@@ -88,29 +170,30 @@ header {
     display: block;
     position: fixed;
     height: 1%;
-    width: 100%;
+    width: 98%;
 }
 
 #expert-chat-form {
     display: flex;
-    justify-content: end;
+    justify-content: start;
     padding: 1%;
     background-color: white;
 }
 
 
 #user-message {
-    width: 100%;
+    width: 80%;
     height: 38px;
 }
 
 #send-message {
     border-radius: 100px;
+    width: 10%;
     border: none;
-    background-color: #003C43;
+    background-color: #135D66;
     cursor: pointer;
     color: white;
-    margin-left: 2px;
+    margin-left: 5px;
 }
 
 #expert-chat-head {
@@ -120,7 +203,7 @@ header {
 
 /* width */
 #messages::-webkit-scrollbar {
-    width: 5px;
+    width: 4.5px;
 }
 
 /* Track */

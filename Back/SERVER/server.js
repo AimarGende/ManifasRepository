@@ -6,7 +6,6 @@ const cors = require('cors');
 const socketio = require('socket.io');
 
 const port = 3000;
-const secretKey = 'claveSecreta';
 
 app.use(express.static(__dirname));
 app.use(cors());

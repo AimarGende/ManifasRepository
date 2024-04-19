@@ -8,7 +8,6 @@ function logOut(user_id) {
     conexion.query(`SELECT id FROM user WHERE email='${user_id}'`, (error, userRow) => {
         if (error) {
             console.log(error);
-            resolve(false);
         }
         else {
             for (let key in userRow) {

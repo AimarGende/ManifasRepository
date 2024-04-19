@@ -1,1 +1,2 @@
--- usuarios, tokens, intereses, grupos, protestas, mensajes(log o tabla),a
+-- usuarios, tokens, intereses, grupos, protestas, mensajes(log o tabla),
+--HOLA SOY GERARD

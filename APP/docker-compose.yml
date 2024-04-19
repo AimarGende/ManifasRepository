@@ -22,31 +22,31 @@ services:
       start_period: 10s
       timeout: 5s
 # Contenedor de laravel para mantener el servidor
-  Server:
-          image:  node:latest
-          ports:
-          - "8080:3000"
-          volumes:
-            - ../Back/SERVER:/app
-          depends_on:
-             mysql:
-                condition: service_healthy
-  API:
-          image:  node:latest
-          ports:
-          - "8081:3000"
-          volumes:
-            - ../Back/API:/app
-          depends_on:
-            mysql:
-                condition: service_healthy
-  #Contenedor con LAMP para guardar nuestra pagina web
-  LAMP:
-          image: httpd:latest
-          ports:
-          - "8082:80"
-          volumes:
-          - ../Front:/usr/local/apache2/htdocs/
+  # Server:
+  #         image:  node:latest
+  #         ports:
+  #         - "8080:3000"
+  #         volumes:
+  #           - ../Back/SERVER:/app
+  #         depends_on:
+  #            mysql:
+  #               condition: service_healthy
+  # API:
+  #         image:  node:latest
+  #         ports:
+  #         - "8081:3000"
+  #         volumes:
+  #           - ../Back/API:/app
+  #         depends_on:
+  #           mysql:
+  #               condition: service_healthy
+  # #Contenedor con LAMP para guardar nuestra pagina web
+  # LAMP:
+  #         image: httpd:latest
+  #         ports:
+  #         - "8082:80"
+  #         volumes:
+  #         - ../Front:/usr/local/apache2/htdocs/
   #Contenedor para proxy inversa
   # Inverso:
   #         image: nginx:latest

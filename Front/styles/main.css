@@ -8,7 +8,7 @@
 body {
 
     overflow-x: hidden;
-    background-color: #f3fbf7;
+    background-color: #DDE6ED;
 }
 
 /*header*/
@@ -20,7 +20,7 @@ header {
     left: 0;
     width: 102%;
     height: 100px;
-    background-color: #135D66;
+    background-color: #526D82;
 }
 
 #logout {
@@ -108,7 +108,7 @@ header {
 
 #titulo-manifa {
     font-size: 50px;
-    color: rgb(19, 93, 102);
+    color: #27374D;
 }
 
 /*mapa rutas*/
@@ -133,7 +133,7 @@ header {
     bottom: 0;
     width: 100%;
     height: auto;
-    background-color: #135D66;
+    background-color: #526D82;
     z-index: 0;
 }
 
@@ -160,12 +160,12 @@ header {
 }
 
 .pie-pagina .grupo-1 .box h2 {
-    color: #fff;
+    color: black;
     font-size: 20px;
 }
 
 .pie-pagina .grupo-1 .box p {
-    color: #efefef;
+    color: black;
     margin-bottom: 10px;
 }
 
@@ -175,9 +175,9 @@ header {
     width: 45px;
     height: 45px;
     line-height: 45px;
-    color: #fff;
+    color: black;
     margin-right: 10px;
-    background-color: #003C43;
+    background-color: #27374D;
     text-align: center;
     transition: all 300ms ease;
 }
@@ -187,10 +187,10 @@ header {
 }
 
 .pie-pagina .grupo-2 {
-    background-color: #003C43;
+    background-color: #27374D;
     padding: 8px 5px;
     text-align: center;
-    color: #fff;
+    color: black;
 }
 
 .pie-pagina .grupo-2 small {
@@ -232,7 +232,7 @@ header {
     padding-top: 4px;
     padding-bottom: 12px;
     color: black;
-    background-color: #135D66;
+    background-color: #526D82;
     border: solid rgb(15, 15, 24) 1px;
     text-align: center;
     width: 400px;
@@ -290,9 +290,9 @@ header {
     border-radius: 100px;
     width: 10%;
     border: none;
-    background-color: rgb(19, 93, 102);
+    background-color: #27374D;
     cursor: pointer;
-    color: black;
+    color: white;
     margin-left: 5px;
 }
 
@@ -306,13 +306,13 @@ header {
 .group {
     width: 100%;
     height: 11%;
-    background-color: rgb(119, 176, 170);
+    background-color: #9DB2BF;
     cursor: pointer;
     color: black;
 }
 
 .group:hover {
-    background-color: rgb(72, 128, 122);
+    background-color: #7d94a1;
 }
 
 .group i {
@@ -327,7 +327,7 @@ header {
     display: block;
     margin: 0 -0.1%;
     text-align: center;
-    background-color: rgb(119, 176, 170);
+    background-color: #9DB2BF;
     color: black;
     cursor: pointer;
 }
@@ -350,13 +350,13 @@ header {
 
 /* Handle */
 #messages::-webkit-scrollbar-thumb {
-    background: #003C43;
+    background: #27374D;
     border-radius: 10px;
 }
 
 /* Handle on hover */
 #messages::-webkit-scrollbar-thumb:hover {
-    background: #003C43;
+    background: #27374D;
 }
 
 

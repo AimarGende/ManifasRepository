@@ -12,10 +12,7 @@ marker.on('click', () => {
     toggleInfo('info');
 });
 
-var routesMap = L.map('rutas-bloqueadas').setView([43.316893, -1.980888], 7);//Mapa para mostrar ruta de manifestacion
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors'
-}).addTo(routesMap);
+
 
 function toggleInfo(info) {
     let infoContainer = document.getElementById('info-container');
@@ -25,6 +22,11 @@ function toggleInfo(info) {
     let map = document.getElementById('locations-map');
     map.classList.toggle('hidden');
     changeInfo(info);
+    /*Unica manera de cargar mapa*/
+    var routesMap = L.map('rutas-bloqueadas').setView([43.316893, -1.980888], 7);//Mapa para mostrar ruta de manifestacion
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(routesMap);
 }
 
 function changeInfo(info) {

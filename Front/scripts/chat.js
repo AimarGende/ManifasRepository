@@ -1,10 +1,3 @@
-let upcomingMessages = document.getElementById('upcoming-messages');
-let textBox = document.getElementById('text-box')
-let messagesContainer = document.getElementById('messages');
-let expertChatHead = document.getElementById('expert-chat-head');
-let expertChatForm = document.getElementById('expert-chat-form')
-let userName = 'Usuario'
-
 expertChatHead.addEventListener('click', () => {
     toggleMenu()
 })
@@ -38,6 +31,7 @@ expertChatForm.addEventListener('submit', (event) => {
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
     }
 });
+
 function CreateGroup(group) {
     let groupDiv = document.createElement('div')
     groupDiv.className += `group group${group}`

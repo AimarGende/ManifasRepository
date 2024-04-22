@@ -6,6 +6,8 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors'
 }).addTo(locationMap);
 
+
+
 let marker = L.marker([43.316893, -1.980888]).addTo(locationMap);
 marker._icon.classList.add('marcador')
 marker.on('click', () => {
@@ -27,6 +29,13 @@ function toggleInfo(info) {
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap contributors'
     }).addTo(routesMap);
+    L.Routing.control({
+        waypoints: [
+            L.latLng(43.316893, -1.980888),
+            L.latLng(43.340356, -1.809225)
+        ]
+    }).addTo(routesMap);
+    document.getElementsByClassName('leaflet-routing-container')[0].style.display = 'none'
 }
 
 function changeInfo(info) {

@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Manifas.com</title>
+    <link rel="icon" href="imagenes/Poste.png">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -13,7 +14,7 @@
 
 <body>
     <header>
-        <img src="imagenes/LogoDefinitivo.png" width="300px" alt="">
+        <img src="imagenes/LogoDefinitivo.png" id="header-logo" alt="">
         <p id="logout">Logout</p>
     </header>
     <div id="expert-chat">
@@ -36,8 +37,9 @@
         </div>
         <div id="locations-map"></div>
         <div id="info-container">
-            <h1 id="titulo-manifa">Titulo manifa</h1>
+            <h1 id="titulo-manifa">Nombre manifa</h1>
             <div id="razon">
+                <b>¿Porque se hace?</b><br>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, eligendi placeat ea fugit quidem, impedit nulla, laudantium consequuntur vitae cupiditate assumenda! Maxime sunt porro soluta? Molestiae id corporis nobis provident?
                 Blanditiis molestias vel error! Velit ut quibusdam distinctio fugiat vitae ipsa quae, perspiciatis nulla, voluptate labore accusamus sit, deserunt veritatis? Similique rerum, possimus maxime recusandae dolores non! Perferendis, quasi dolores?
                 Fugit quaerat, in animi architecto maiores ut cumque praesentium qui expedita sapiente autem deserunt, ratione odio repellat quam reiciendis consequatur, quo voluptatibus quis enim quod sed. Provident facere dolorem molestiae!
@@ -62,7 +64,7 @@
             <div id="rutas-bloqueadas">
 
             </div>
-
+            <p id="back" onclick="toggleInfo('info')"><u><b>Volver a mapa</b></u></p>
         </div>
     </div>
     <footer class="pie-pagina">

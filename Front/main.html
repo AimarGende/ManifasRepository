@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.min.js"></script>
 </head>
 
 <body>
@@ -27,7 +30,41 @@
             </div>
         </div>
     </div>
-    <div id="main"></div>
+    <div id="main">
+        <div id="buscador-container"> <input type="text" id="buscador" placeholder="Buscar...">
+            <div id="find-button"></div>
+        </div>
+        <div id="locations-map"></div>
+        <div id="info-container">
+            <h1 id="titulo-manifa">Titulo manifa</h1>
+            <div id="razon">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, eligendi placeat ea fugit quidem, impedit nulla, laudantium consequuntur vitae cupiditate assumenda! Maxime sunt porro soluta? Molestiae id corporis nobis provident?
+                Blanditiis molestias vel error! Velit ut quibusdam distinctio fugiat vitae ipsa quae, perspiciatis nulla, voluptate labore accusamus sit, deserunt veritatis? Similique rerum, possimus maxime recusandae dolores non! Perferendis, quasi dolores?
+                Fugit quaerat, in animi architecto maiores ut cumque praesentium qui expedita sapiente autem deserunt, ratione odio repellat quam reiciendis consequatur, quo voluptatibus quis enim quod sed. Provident facere dolorem molestiae!
+                Nemo pariatur perspiciatis aperiam voluptate inventore molestiae itaque voluptatem mollitia sapiente est dolore incidunt voluptatibus eius quidem repudiandae minima, accusantium dignissimos maiores doloribus, nisi similique illum animi ullam! Fugit, dignissimos?
+                Facere amet dolorum est illo natus vel nemo ducimus vero tempora voluptatum, consectetur nobis repellat aliquid maxime? Saepe veritatis explicabo, necessitatibus quisquam voluptas rem, fuga sit adipisci, non labore sunt?
+                Deserunt, nihil atque! Nihil corporis distinctio itaque beatae rem alias? Quibusdam eius, eaque maxime nesciunt error sapiente necessitatibus, neque architecto voluptate ullam ab ipsa, accusamus quo autem? Dolor, fugit a?
+                Quos, amet quam veritatis itaque hic reprehenderit suscipit numquam molestias, debitis incidunt dolor blanditiis, dolorem temporibus. Possimus similique iste quia, officia rerum, doloremque ab tempore perferendis, voluptatum dolores sequi atque.
+                Commodi incidunt impedit reiciendis maiores qui? Neque consequatur tenetur placeat quibusdam, sint natus assumenda, sequi enim officia eveniet, nulla perferendis aperiam vero architecto minima ducimus aliquam? Quas harum nostrum similique!
+                Commodi architecto hic voluptatum? Dolor necessitatibus, eaque facere magni expedita, excepturi velit consectetur quisquam veniam qui sequi, culpa voluptatum quasi aliquid dolorem eius repellendus in quo! Est sunt tenetur ex.
+                Magni accusamus, assumenda dolorum beatae iure eius obcaecati corrupti minus mollitia, voluptate dicta fugit incidunt quaerat temporibus. Sed recusandae cupiditate explicabo nobis unde, temporibus, voluptatum aspernatur doloribus earum necessitatibus adipisci.
+                Voluptates facilis officiis sint quidem non velit nemo, nam dolorum, architecto vero maxime blanditiis commodi voluptatum cupiditate minus. Ipsam dolorum vel hic autem laborum ducimus possimus blanditiis corrupti quibusdam consectetur!
+                Doloremque ex quibusdam incidunt itaque inventore nihil ab necessitatibus cumque id porro omnis tempora perferendis tempore in unde sit expedita sequi quaerat nulla, eaque quis nisi culpa! Nesciunt, rem aliquam.
+                Consequatur, optio similique? Accusantium corporis dignissimos dolor ratione aut aperiam voluptate aspernatur culpa impedit, atque veniam sequi minima porro et blanditiis, asperiores quod? Eveniet nostrum voluptates vero velit obcaecati laboriosam.
+                Rerum expedita magnam quam omnis. Labore voluptatum molestias ea ad voluptate, necessitatibus ducimus aspernatur veritatis, earum animi dolorem. Minima officiis optio provident in a eum ut repellendus commodi voluptatem eos.
+                Quis consequuntur quae eum fugiat cumque eos, ut quam saepe numquam nobis veniam blanditiis similique, officiis ipsum optio sequi voluptatum! Recusandae suscipit fugit tempora optio commodi explicabo corporis qui ipsam.
+                Natus expedita eius explicabo magni laudantium culpa! Quis ipsum perspiciatis ratione voluptatum! Cum porro provident eum. Earum laboriosam praesentium nemo excepturi repellendus laudantium magnam repudiandae nisi, quidem ducimus, voluptatibus nostrum.
+                Recusandae ipsa odit dolores dolorum tenetur, aut saepe tempore numquam facilis dicta error magnam, earum eligendi sequi voluptas neque consequuntur doloribus, nesciunt ullam sunt ipsam reprehenderit eius? Enim, cumque nemo.
+                Minus, adipisci incidunt repellat quo quaerat inventore enim a saepe impedit ex quam fugit dolores earum nam corporis. Sint quidem, aut officia voluptas voluptate labore magni nobis hic sapiente voluptatem!
+                Vel quisquam exercitationem laudantium reprehenderit asperiores odit alias quis et natus aspernatur, debitis, omnis ipsa amet id eius error iste qui dignissimos perspiciatis in ipsam cupiditate. Temporibus iste fugiat corporis.
+                Quisquam earum eos harum minima non, ex dolore eius mollitia fuga doloremque adipisci temporibus magnam at similique nesciunt? Ullam laudantium amet suscipit, dolores laborum nulla non saepe corporis assumenda totam.
+            </div>
+            <div id="rutas-bloqueadas">
+
+            </div>
+
+        </div>
+    </div>
     <footer class="pie-pagina">
         <div class="grupo-1">
             <div class="box">
@@ -96,6 +133,7 @@
         });
 
     </script>
+    <script src="scripts/mapa.js"></script>
 </body>
 
 </html>

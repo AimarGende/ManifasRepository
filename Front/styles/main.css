@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     overflow-x: hidden;
     background-color: #f3fbf7;
@@ -32,48 +33,116 @@ header {
 }
 
 /*main*/
-#main{
+#main {
     width: 100%;
-    height: 2000px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
+
+/*Buscador*/
+#buscador-container {
+    margin: 1%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#buscador {
+    width: 80%;
+    height: 15%;
+    font-size: 25px;
+}
+
+#find-button {
+    height: 33px;
+    width: 50px;
+    border: 1px solid #5c6061;
+    background-color: red;
+    cursor: pointer;
+}
+
+#find-button:active {
+    background-color: rgb(190, 18, 18);
+}
+
+
+/*Mapa localizaciones*/
+#locations-map {
+    height: 40vh;
+    width: 83vw;
+    border-radius: 25px;
+    z-index: 0;
+    margin-bottom: 1%;
+}
+
+/*Div informacion*/
+#info-container {
+    margin: 1% 0;
+    padding: 1%;
+    width: 85vw;
+    border: 1px solid #5c6061;
+}
+
+#titulo-manifa{
+    font-size: 50px;
+    color: rgb(19, 93, 102);
+}
+
+/*mapa rutas*/
+#rutas-bloqueadas{
+    margin-top: 2%;
+    height: 400px;
+    width: 100%;
+    z-index: 0;
+}
+
 /*footer*/
 
-.pie-pagina{
+.pie-pagina {
     position: relative;
     bottom: 0;
-    width: 100%;
+    width: 102%;
     height: 20%;
     background-color: #135D66;
     z-index: 0;
 }
-.pie-pagina .grupo-1{
+
+.pie-pagina .grupo-1 {
     width: 100%;
     max-width: 1200px;
     margin: auto;
-    display:grid;
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap:50px;
+    grid-gap: 50px;
     padding: 20px 0px;
 }
-.pie-pagina .grupo-1 .box figure{
+
+.pie-pagina .grupo-1 .box figure {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.pie-pagina .grupo-1 .box figure img{
+
+.pie-pagina .grupo-1 .box figure img {
     width: 250px;
 }
-.pie-pagina .grupo-1 .box h2{
+
+.pie-pagina .grupo-1 .box h2 {
     color: #fff;
     font-size: 20px;
 }
-.pie-pagina .grupo-1 .box p{
+
+.pie-pagina .grupo-1 .box p {
     color: #efefef;
     margin-bottom: 10px;
 }
-.pie-pagina .grupo-1 .red-social a{
+
+.pie-pagina .grupo-1 .red-social a {
     display: inline-block;
     text-decoration: none;
     width: 45px;
@@ -85,26 +154,31 @@ header {
     text-align: center;
     transition: all 300ms ease;
 }
-.pie-pagina .grupo-1 .red-social a:hover{
+
+.pie-pagina .grupo-1 .red-social a:hover {
     color: aqua;
 }
-.pie-pagina .grupo-2{
+
+.pie-pagina .grupo-2 {
     background-color: #003C43;
     padding: 15px 10px;
     text-align: center;
     color: #fff;
 }
-.pie-pagina .grupo-2 small{
+
+.pie-pagina .grupo-2 small {
     font-size: 15px;
 }
-@media screen and (max-width:800px){
-    .pie-pagina .grupo-1{
+
+@media screen and (max-width:800px) {
+    .pie-pagina .grupo-1 {
         width: 90%;
         grid-template-columns: repeat(1, 1fr);
-        grid-gap:30px;
+        grid-gap: 30px;
         padding: 35px 0px;
     }
 }
+
 /*Chat messages*/
 #upcoming-messages {
     width: 400px;

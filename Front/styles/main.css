@@ -235,7 +235,7 @@ header {
     background-color: #526D82;
     border: solid rgb(15, 15, 24) 1px;
     text-align: center;
-    width: 400px;
+    width: 397px;
     height: 60px;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
@@ -330,6 +330,7 @@ header {
     background-color: #9DB2BF;
     color: black;
     cursor: pointer;
+    width: 396px;
 }
 
 #expert-chat-head {
@@ -359,9 +360,8 @@ header {
     background: #27374D;
 }
 
-
 #group-selection::-webkit-scrollbar {
-    width: 5px;
+    width: 4.5px;
 }
 
 /* Track */

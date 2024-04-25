@@ -2,7 +2,7 @@ version: '3.3'
 services:
 #Contenedor mysql para crear la base de datos
   mysql:
-    image: mysql:latest
+    image: mysql:latest #Si no funciona usasr 5.7
     environment:
       MYSQL_DATABASE: 'Manifas'
       MYSQL_USER: 'usuario'

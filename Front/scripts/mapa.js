@@ -26,15 +26,16 @@ function toggleInfo(info) {
     if (routesMap) {
         console.log('existe')
     }
+    
     else {
-        routesMap = L.map('rutas-bloqueadas').setView([43.316893, -1.980888], 7);//Mapa para mostrar ruta de manifestacion
+        routesMap = L.map('rutas-bloqueadas').setView([43.316893, -1.980888], 15);//Mapa para mostrar ruta de manifestacion
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap contributors'
         }).addTo(routesMap);
         L.Routing.control({
             waypoints: [
-                L.latLng(43.316893, -1.980888),
-                L.latLng(43.340356, -1.809225),
+                L.latLng(43.318251, -1.979724),
+                L.latLng(43.311747, -2.008162),
             ]
         }).addTo(routesMap);
         document.getElementsByClassName('leaflet-routing-container')[0].style.display = 'none'
@@ -44,3 +45,5 @@ function toggleInfo(info) {
 function changeInfo(info) {
     console.log(info)
 }
+
+//Coordenadas irun 43.337593, -1.792663

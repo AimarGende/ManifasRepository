@@ -276,15 +276,13 @@ ALTER TABLE `protestas/ciudades`
 -- Filtros para la tabla `suscripciones`
 --
 ALTER TABLE `suscripciones`
-  ADD CONSTRAINT `suscripciones_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `USUARIOS` (`id`),
   ADD CONSTRAINT `suscripciones_ibfk_2` FOREIGN KEY (`idUsuario`) REFERENCES `Usuarios` (`id`);
 
 --
 -- Filtros para la tabla `tokens`
 --
 ALTER TABLE `tokens`
-  ADD CONSTRAINT `fkusuariosTokens` FOREIGN KEY (`idUsuario`) REFERENCES `Usuarios` (`id`),
-  ADD CONSTRAINT `tokens_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `USUARIOS` (`id`);
+  ADD CONSTRAINT `fkusuariosTokens` FOREIGN KEY (`idUsuario`) REFERENCES `Usuarios` (`id`);
 
 --
 -- Filtros para la tabla `Usuarios/Grupos`

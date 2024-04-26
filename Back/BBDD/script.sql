@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: mysql
--- Tiempo de generación: 19-04-2024 a las 11:24:21
+-- Tiempo de generación: 26-04-2024 a las 07:29:16
 -- Versión del servidor: 8.3.0
 -- Versión de PHP: 8.2.15
 
@@ -159,7 +159,8 @@ ALTER TABLE `Grupos`
 --
 ALTER TABLE `Mensajes`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `idUsuario` (`idUsuario`);
+  ADD KEY `idUsuario` (`idUsuario`),
+  ADD KEY `fkmensajesgrupos` (`idGrupo`);
 
 --
 -- Indices de la tabla `Protestas`
@@ -171,7 +172,8 @@ ALTER TABLE `Protestas`
 -- Indices de la tabla `protestas/ciudades`
 --
 ALTER TABLE `protestas/ciudades`
-  ADD PRIMARY KEY (`idProtesta`,`idCiudad`,`fecha`);
+  ADD PRIMARY KEY (`idProtesta`,`idCiudad`,`fecha`),
+  ADD KEY `fkprotestasciudades2` (`idCiudad`);
 
 --
 -- Indices de la tabla `suscripciones`
@@ -185,13 +187,20 @@ ALTER TABLE `suscripciones`
 --
 ALTER TABLE `tokens`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `idUsuario` (`idUsuario`);
+  ADD KEY `fkusuariosTokens` (`idUsuario`);
 
 --
 -- Indices de la tabla `Usuarios`
 --
 ALTER TABLE `Usuarios`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `Usuarios/Grupos`
+--
+ALTER TABLE `Usuarios/Grupos`
+  ADD KEY `UsuariosGrupos` (`idUsuario`),
+  ADD KEY `fkusuariogrupo2` (`idGrupo`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -253,7 +262,15 @@ ALTER TABLE `Grupos`
 -- Filtros para la tabla `Mensajes`
 --
 ALTER TABLE `Mensajes`
+  ADD CONSTRAINT `fkmensajesgrupos` FOREIGN KEY (`idGrupo`) REFERENCES `Grupos` (`id`),
   ADD CONSTRAINT `mensajes_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `Usuarios` (`id`);
+
+--
+-- Filtros para la tabla `protestas/ciudades`
+--
+ALTER TABLE `protestas/ciudades`
+  ADD CONSTRAINT `fkprotestasciudades` FOREIGN KEY (`idProtesta`) REFERENCES `Protestas` (`id`),
+  ADD CONSTRAINT `fkprotestasciudades2` FOREIGN KEY (`idCiudad`) REFERENCES `ciudades` (`id`);
 
 --
 -- Filtros para la tabla `suscripciones`
@@ -266,7 +283,15 @@ ALTER TABLE `suscripciones`
 -- Filtros para la tabla `tokens`
 --
 ALTER TABLE `tokens`
+  ADD CONSTRAINT `fkusuariosTokens` FOREIGN KEY (`idUsuario`) REFERENCES `Usuarios` (`id`),
   ADD CONSTRAINT `tokens_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `USUARIOS` (`id`);
+
+--
+-- Filtros para la tabla `Usuarios/Grupos`
+--
+ALTER TABLE `Usuarios/Grupos`
+  ADD CONSTRAINT `fkusuariogrupo2` FOREIGN KEY (`idGrupo`) REFERENCES `Grupos` (`id`),
+  ADD CONSTRAINT `UsuariosGrupos` FOREIGN KEY (`idUsuario`) REFERENCES `Usuarios` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

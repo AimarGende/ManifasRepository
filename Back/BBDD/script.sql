@@ -47,8 +47,7 @@ CREATE TABLE `ciudades` (
 CREATE TABLE `Grupos` (
   `id` int NOT NULL,
   `nombre` varchar(255) NOT NULL,
-  `detalle` text NOT NULL,
-  `idProtesta` int NOT NULL
+  `detalle` text NOT NULL
 );
 
 -- --------------------------------------------------------
@@ -79,12 +78,12 @@ CREATE TABLE `Protestas` (
 --
 -- Estructura de tabla para la tabla `protestas/ciudades`
 --
-CREATE TABLE `protestas/ciudades` (
+CREATE TABLE `protestas_ciudades` (
   `idProtesta` int NOT NULL,
   `idCiudad` int NOT NULL,
   `fecha` date NOT NULL,
   `comienzo` varchar(255) NOT NULL,
-  `destino` varchar(255) NOT NULL,
+  `destino` varchar(255) NOT NULL
 );
 
 -- --------------------------------------------------------
@@ -124,7 +123,7 @@ CREATE TABLE `Usuarios` (
 --
 -- Estructura de tabla para la tabla `Usuarios/Grupos`
 --
-CREATE TABLE `Usuarios/Grupos` (
+CREATE TABLE `Usuarios_Grupos` (
   `idUsuario` int NOT NULL,
   `idGrupo` int NOT NULL
 );
@@ -146,9 +145,7 @@ ADD
 ALTER TABLE
   `Grupos`
 ADD
-  PRIMARY KEY (`id`),
-ADD
-  KEY `idProtesta` (`idProtesta`);
+  PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `Mensajes`
@@ -174,7 +171,7 @@ ADD
 -- Indices de la tabla `protestas/ciudades`
 --
 ALTER TABLE
-  `protestas/ciudades`
+  `protestas_ciudades`
 ADD
   PRIMARY KEY (`idProtesta`, `idCiudad`, `fecha`),
 ADD
@@ -212,7 +209,7 @@ ADD
 -- Indices de la tabla `Usuarios/Grupos`
 --
 ALTER TABLE
-  `Usuarios/Grupos`
+  `Usuarios_Grupos`
 ADD
   KEY `UsuariosGrupos` (`idUsuario`),
 ADD
@@ -283,10 +280,7 @@ MODIFY
 --
 -- Filtros para la tabla `Grupos`
 --
-ALTER TABLE
-  `Grupos`
-ADD
-  CONSTRAINT `grupos_ibfk_1` FOREIGN KEY (`idProtesta`) REFERENCES `Protestas` (`id`);
+
 
 --
 -- Filtros para la tabla `Mensajes`
@@ -302,7 +296,7 @@ ADD
 -- Filtros para la tabla `protestas/ciudades`
 --
 ALTER TABLE
-  `protestas/ciudades`
+  `protestas_ciudades`
 ADD
   CONSTRAINT `fkprotestasciudades` FOREIGN KEY (`idProtesta`) REFERENCES `Protestas` (`id`),
 ADD
@@ -328,7 +322,7 @@ ADD
 -- Filtros para la tabla `Usuarios/Grupos`
 --
 ALTER TABLE
-  `Usuarios/Grupos`
+  `Usuarios_Grupos`
 ADD
   CONSTRAINT `fkusuariogrupo2` FOREIGN KEY (`idGrupo`) REFERENCES `Grupos` (`id`),
 ADD
@@ -341,12 +335,17 @@ INSERT INTO  `ciudades` (`nombre`, `latitud`, `longitud`) VALUES ('Hondarribia',
 INSERT INTO  `ciudades` (`nombre`, `latitud`, `longitud`) VALUES ('Bilbao','43.263197','-2.935796');
 INSERT INTO  `ciudades` (`nombre`, `latitud`, `longitud`) VALUES ('Vitoria-Gasteiz','42.850323','-2.666944');
 
-INSERT INTO `Protestas` (`nombre`, `detalle`, `horaInicio`, `horaFinEstimada`) VALUES (`Euskera`,`Protesta para difundir que el euskera esta desapareciendo`,`8:00`,`9:30`)
+INSERT INTO `Protestas` (`nombre`, `detalle`, `horaInicio`, `horaFinEstimada`) VALUES ('Euskera', 'Protesta para difundir que el euskera esta desapareciendo', '8:00', '9:30');
 
-INSERT INTO `protestas/ciudades` VALUES(1,1,`2024-05-20`,`43.318251, -1.979724`,`43.311747, -2.008162`);
-INSERT INTO `protestas/ciudades` VALUES(1,2,`2024-05-21`,`43.379133, -1.798184`,`43.360052, -1.790997`);
-INSERT INTO `protestas/ciudades` VALUES(1,3,`2024-05-22`,`43.280409, -2.965087`,`43.269846, -2.940800`);
-INSERT INTO `protestas/ciudades` VALUES(1,4,`2024-05-23`,`42.864912, -2.695746`,`42.850032, -2.688665`);
+INSERT INTO `protestas_ciudades` VALUES(1,1,'2024-05-20','43.318251, -1.979724','43.311747, -2.008162');
+INSERT INTO `protestas_ciudades` VALUES(1,2,'2024-05-21','43.379133, -1.798184','43.360052, -1.790997');
+INSERT INTO `protestas_ciudades` VALUES(1,3,'2024-05-22','43.280409, -2.965087','43.269846, -2.940800');
+INSERT INTO `protestas_ciudades` VALUES(1,4,'2024-05-23','42.864912, -2.695746','42.850032, -2.688665');
+
+INSERT INTO `Grupos` (`nombre`,`detalle`)VALUES('Euskera bultzatu','Grupo para organizar manifestacion para apoyar al euskera');
+INSERT INTO `Grupos` (`nombre`,`detalle`)VALUES('Huelga agraria','Grupo para organizar manifestacion para apoyar a los agricultores locales');
+INSERT INTO `Grupos` (`nombre`,`detalle`)VALUES('Huelga igualdad','Grupo para organizar manifestacion para apoyar la igualdad');
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */
 ;
 

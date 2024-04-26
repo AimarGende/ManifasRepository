@@ -1,4 +1,5 @@
 const BBDD = require('./BBDD.js');
+const crypto = require('crypto');
 
 //EJEMPLO
 function login(userObj) {
@@ -21,6 +22,9 @@ function login(userObj) {
 
 function register(userObj) {
     let conexion = BBDD.getConexion();
+    let userObjCopy = userObj;
+    userObjCopy.salt = crypto.randomBytes(16).toString('hex');
+    userObjCopy.password = crypto.pbkdf2Sync(userObjCopy.password, userObjCopy.salt, 1000, 64, `sha512`).toString('hex');
     conexion.query(`INSERT INTO Usuarios SET ?`, userObj, (error,useRow)=>{
         if (error) {
             console.log(useRow);
@@ -45,6 +49,12 @@ function logOut(user_id) {
             }
         }
     });
+}
+
+function validatePassword(password, hashedPass, salt) {
+    console.log()
+    let hash = crypto.pbkdf2Sync(password, salt, 1000, 64, `sha512`).toString(`hex`);
+    return hash == hashedPass;
 }
 
 module.exports.logOut = logOut;

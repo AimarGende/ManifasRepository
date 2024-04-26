@@ -2,7 +2,7 @@ const http = require('http');
 const express = require('express');
 const app = express();
 const cors = require('cors');
-
+const jwt = require('jsonwebtoken')
 const port = 8080;
 const secretKey = 'claveSecreta';
 
@@ -19,6 +19,17 @@ app.use(express.json());
 app.post('/Login', (req, res) => {
     let userObj = req.body;
     let token = jwt.sign({ user: userObj.email }, secretKey);
+    userController.login(userObj, token).then(data => {
+        if (data) {
+            let userInfo = {
+                user: userObj.email,
+                token: token,
+                state: data,
+            }
+            res.json(userInfo)
+        }
+    })
+
     //Codigo para login
 });
 
@@ -28,14 +39,25 @@ app.post('/Login', (req, res) => {
 app.post('/Register', (req, res) => {
     let userObj = req.body;
     let token = jwt.sign({ user: userObj.email }, secretKey);
+    userController.register(userObj, token).then(data => {
+        if (data) {
+            let userInfo = {
+                user: userObj.email,
+                token: token,
+                state: data,
+            }
+            res.json(userInfo)
+        }
+    });
     //Codigo para registrarse
 });
 
 /**
  * Ruta para hacer logout al usuario
  */
-app.post('/logout', (req, res) => {
-    //Funcion para logout 
+app.post('/Logout', (req, res) => {
+    let userObj = req.body;
+    userController.logOut(userObj.email)
 });
 
 const expressServer = http.createServer(app);
@@ -44,11 +66,4 @@ expressServer.listen(port, () => {
     console.log('Server open at port ' + port);
 });
 
-let userObj = {
-    nombre: 'gerardo',
-    password: 'password',
-    email: 'gerard@gmail.com',
-    evita: 1,
-}
 BBDD.InitializeConexion();
-userController.register(userObj);

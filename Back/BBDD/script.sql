@@ -124,7 +124,7 @@ CREATE TABLE `Usuarios` (
   `password` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL UNIQUE,
   `salt`text NOT NULL,
-  `evita` tinyint(1) NOT NULL,
+  `evita` tinyint(1) NOT NULL
 );
 
 -- --------------------------------------------------------

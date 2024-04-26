@@ -1,5 +1,6 @@
 version: '3.3'
 services:
+
 #Contenedor mysql para crear la base de datos
   mysql:
     image: mysql:latest #Si no funciona usasr 5.7
@@ -13,7 +14,7 @@ services:
     expose:
       - '3306'
     volumes:
-      - './mysql/:/var/lib/mysql'
+      - '../Back/BBDD/script.sql:/docker-entrypoint-initdb.d/script.sql'
     command: ["--log_bin_trust_function_creators=1"]
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
@@ -21,6 +22,7 @@ services:
       retries: 5
       start_period: 10s
       timeout: 5s
+
 # Contenedor de laravel para mantener el servidor
   # Server:
   #         image:  node:latest
@@ -40,13 +42,15 @@ services:
   #         depends_on:
   #           mysql:
   #               condition: service_healthy
+
   # #Contenedor con LAMP para guardar nuestra pagina web
   # LAMP:
-  #         image: httpd:latest
-  #         ports:
-  #         - "8082:80"
-  #         volumes:
-  #         - ../Front:/usr/local/apache2/htdocs/
+          # image: httpd:latest
+          # ports:
+          # - "8082:80"
+          # volumes:
+          # - ../Front:/usr/local/apache2/htdocs/
+
   #Contenedor para proxy inversa
   # Inverso:
   #         image: nginx:latest

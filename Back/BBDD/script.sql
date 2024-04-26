@@ -32,7 +32,7 @@ CREATE TABLE `ciudades` (
   `nombre` varchar(255) NOT NULL,
   `latitud` varchar(255) NOT NULL,
   `longitud` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -45,7 +45,7 @@ CREATE TABLE `Grupos` (
   `nombre` varchar(255) NOT NULL,
   `detalle` text NOT NULL,
   `idProtesta` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -59,7 +59,7 @@ CREATE TABLE `Mensajes` (
   `fecha` date NOT NULL,
   `idUsuario` int NOT NULL,
   `idGrupo` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -74,7 +74,7 @@ CREATE TABLE `Protestas` (
   `fecha` date NOT NULL,
   `horaInicio` datetime NOT NULL,
   `horaFinEstimada` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -86,7 +86,7 @@ CREATE TABLE `protestas/ciudades` (
   `idProtesta` int NOT NULL,
   `idCiudad` int NOT NULL,
   `fecha` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -98,7 +98,7 @@ CREATE TABLE `suscripciones` (
   `id` int NOT NULL,
   `nombre` varchar(255) NOT NULL,
   `idUsuario` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -110,7 +110,7 @@ CREATE TABLE `tokens` (
   `id` int NOT NULL,
   `idUsuario` int NOT NULL,
   `token` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -122,9 +122,10 @@ CREATE TABLE `Usuarios` (
   `id` int NOT NULL,
   `nombre` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `evita` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `email` varchar(255) NOT NULL UNIQUE,
+  `salt`text NOT NULL,
+  `evita` tinyint(1) NOT NULL,
+);
 
 -- --------------------------------------------------------
 
@@ -135,7 +136,7 @@ CREATE TABLE `Usuarios` (
 CREATE TABLE `Usuarios/Grupos` (
   `idUsuario` int NOT NULL,
   `idGrupo` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 --
 -- Índices para tablas volcadas

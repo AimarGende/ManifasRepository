@@ -1,6 +1,4 @@
 const BBDD = require('./BBDD.js');
-const bcrypt = require('bcrypt');
-const saltRounds = 10;
 
 //EJEMPLO
 function login(userObj) {
@@ -23,25 +21,17 @@ function login(userObj) {
 
 function register(userObj) {
     let conexion = BBDD.getConexion();
-    conexion.query(`SELECT id FROM user WHERE email='${userObj.email}'`, (error, userRow) => {
+    conexion.query(`INSERT INTO Usuarios SET ?`, userObj, (error,useRow)=>{
         if (error) {
-            console.log(error);
+            console.log(useRow);
         }
-        else {
-            for (let key in userRow) {
-                conexion.query(`DELETE FROM tokens WHERE user_id=${userRow[key].id}`, (error) => {
-                    if (error) {
-                        console.log(error);
-                    }
-                });
-            }
-        }
-    });
+        console.log(userRow)
+    })
 }
 
 function logOut(user_id) {
     let conexion = BBDD.getConexion();
-    conexion.query(`SELECT id FROM user WHERE email='${user_id}'`, (error, userRow) => {
+    conexion.query(`SELECT id FROM Usuarios WHERE email='${user_id}'`, (error, userRow) => {
         if (error) {
             console.log(error);
         }
@@ -58,3 +48,4 @@ function logOut(user_id) {
 }
 
 module.exports.logOut = logOut;
+module.exports.register = register;

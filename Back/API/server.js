@@ -3,8 +3,11 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 
-const port = 3000;
+const port = 8080;
 const secretKey = 'claveSecreta';
+
+const BBDD = require('./server_modules/BBDD.js')
+const userController = require('./server_modules/userController.js')
 
 app.use(express.static(__dirname));
 app.use(cors());
@@ -40,3 +43,12 @@ const expressServer = http.createServer(app);
 expressServer.listen(port, () => {
     console.log('Server open at port ' + port);
 });
+
+let userObj = {
+    nombre: 'gerardo',
+    password: 'password',
+    email: 'gerard@gmail.com',
+    evita: 1,
+}
+BBDD.InitializeConexion();
+userController.register(userObj);

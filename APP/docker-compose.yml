@@ -3,7 +3,8 @@ services:
 
 #Contenedor mysql para crear la base de datos
   mysql:
-    image: mysql:latest #Si no funciona usasr 5.7
+    image: mysql:5.7 #Si no funciona usasr 5.7
+    restart: always
     environment:
       MYSQL_DATABASE: 'Manifas'
       MYSQL_USER: 'usuario'
@@ -17,31 +18,44 @@ services:
       - '../Back/BBDD/script.sql:/docker-entrypoint-initdb.d/script.sql'
     command: ["--log_bin_trust_function_creators=1"]
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-ppassword"]
       interval: 10s
       retries: 5
       start_period: 10s
       timeout: 5s
 
 # Contenedor de laravel para mantener el servidor
-  # Server:
-  #         image:  node:latest
-  #         ports:
-  #         - "8080:3000"
-  #         volumes:
-  #           - ../Back/SERVER:/app
-  #         depends_on:
-  #            mysql:
-  #               condition: service_healthy
-  # API:
-  #         image:  node:latest
-  #         ports:
-  #         - "8081:3000"
-  #         volumes:
-  #           - ../Back/API:/app
-  #         depends_on:
-  #           mysql:
-  #               condition: service_healthy
+  Server:
+    image: node:21-alpine3.18
+    ports:
+      - "8080:3000"
+    restart: always
+    working_dir: /app
+    volumes:
+      - ../Back/SERVER:/app
+    command:
+      - sh
+      - -c
+      - npm i && npm start
+    depends_on:
+      mysql:
+        condition: service_healthy
+        
+  API:
+    image: node:21-alpine3.18
+    ports:
+      - "8081:8080"
+    restart: always
+    working_dir: /app
+    volumes:
+      - ../Back/API:/app
+    command:
+      - sh
+      - -c
+      - npm i && npm start
+    depends_on:
+      mysql:
+        condition: service_healthy
 
   # #Contenedor con LAMP para guardar nuestra pagina web
   # LAMP:

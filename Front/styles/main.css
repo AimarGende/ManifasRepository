@@ -37,6 +37,34 @@ header {
     margin-left: 5%;
 }
 
+#logout {
+    background-color: rgb(196, 218, 234);
+    color: black;
+    border-radius: 10em;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid black;
+    box-shadow: 0 0 0 0 black;
+    align-self: center;
+    margin-right: 60px;
+    text-decoration: none;
+}
+
+#logout:hover {
+    transform: translateY(-4px) translateX(-2px);
+    box-shadow: 2px 5px 0 0 black;
+}
+
+;
+
+#logout:active {
+    transform: translateY(2px) translateX(1px);
+    box-shadow: 0 0 0 0 black;
+}
+
 /*main*/
 #main {
     width: 100%;

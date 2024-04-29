@@ -7,13 +7,160 @@
     <title>Manifas.com</title>
     <link rel="icon" href="imagenes/Poste.png">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
 </head>
 
 <body>
+    <header>
+        <img src="imagenes/LogoDefinitivo.png" id="header-logo" alt="">
+        <button id="btnLogin"><a href="login.html">Iniciar sesión</a></button>
+    </header>
 
-    <div id="header">
-        <img src="imagenes/LogoDefinitivo.png" alt="">
+    <div id="main">
+        <img src="imagenes/ImgBanner/banner3.jpg" id="banner" alt="">
+
+        <!-- Quienes somos -->
+
+        <h2 id="titulo">¿Quiénes somos?</h2>
+        <p id="info">Somos una plataforma comprometida con la neutralidad informativa en medio del tumulto de las
+            manifestaciones. Nuestra misión es proporcionar un oasis de objetividad en un panorama inundado de opiniones
+            y emociones. Nos dedicamos a ofrecer información imparcial y precisa sobre las manifestaciones, sin
+            influencias políticas ni sesgos. Nuestra presentación clara y concisa brinda detalles sobre la ubicación,
+            hora y motivo de los eventos, junto con información relevante sobre desvíos de tráfico y medidas de
+            seguridad. Nos enorgullece ser un recurso confiable para aquellos que buscan entender y participar en el
+            discurso cívico de manera informada y responsable. <br><br>
+            También ofrecemos suscripciones que proporcionan beneficios exclusivos a nuestros usuarios comprometidos.
+            Con una suscripción, tendrás acceso a contenido adicional y características especiales diseñadas para
+            mejorar tu experiencia en nuestra plataforma. Además, como suscriptor, te convertirás en parte de una
+            comunidad selecta de individuos interesados en mantenerse informados de manera imparcial sobre las
+            manifestaciones y contribuir al discurso cívico de manera constructiva. Únete a nosotros y descubre cómo una
+            suscripción puede enriquecer tu comprensión y participación en los eventos actuales de manera significativa.
+        </p>
+
+        <!-- Como funciona -->
+
+        <h2 id="titulo">¿Cómo funcionamos?</h2>
+        <p id="info">Nuestra página opera con un enfoque intuitivo y accesible. Para empezar, simplemente regístrate e
+            inicia sesión para acceder a todas nuestras funciones. Una vez dentro, te darás cuenta de que la navegación
+            es sencilla y directa. Serás recibido por un mapa interactivo que muestra claramente las próximas
+            manifestaciones mediante marcadores geolocalizados. Al hacer clic en cada marcador, se desplegará una
+            ventana emergente con información detallada sobre la manifestación correspondiente, incluyendo su ubicación
+            exacta y el motivo de su convocatoria.
+        </p>
+
+        <!-- Suscripciones -->
+
+        <h2 id="titulo">Suscripciones y precios</h2>
+        <p id="info">Elije el plan que más se acomode a tus necesidades.</p>
+
+        <!-- Cards de suscripciones -->
+        <div id="containerCards">
+            <div id="card">
+                <img id="imgCard" src="imagenes/planGratis.jpg" alt="Manifas.com">
+                <h3 id="tituloCard">Plan Gratuito</h3>
+                <hr size="4px" color="#27374D" />
+                <h1 id="PrecioPlan">0€
+                    <span>/Por siempre</span>
+                </h1>
+                <p id="infoPlan"><br> Lorem ipsum dolor sit amet consectetur <br>
+                    Lorem ipsum dolor sit amet consectetur <br>
+                    Lorem ipsum dolor sit amet consectetur <br>
+                </p>
+            </div>
+            <div id="card">
+                <img id="imgCard" src="imagenes/planGrupal.jpg" alt="Manifas.com">
+                <h3 id="tituloCard">Suscripción Grupal</h3>
+                <hr size="4px" color="#27374D" />
+                <h1 id="PrecioPlan">10€<span>/al mes</span></h1>
+                <p id="infoPlan"><br> Lorem ipsum dolor sit amet consectetur <br>
+                    Lorem ipsum dolor sit amet consectetur <br>
+                    Lorem ipsum dolor sit amet consectetur <br>
+                </p>
+            </div>
+            <div id="card">
+                <img id="imgCard" src="imagenes/planPremium.jpg" alt="Manifas.com">
+                <h3 id="tituloCard">Suscripción premium</h3>
+                <hr size="4px" color="#27374D" />
+                <h1 id="PrecioPlan">20€<span>/al mes</span></h1>
+                <p id="infoPlan"><br> Lorem ipsum dolor sit amet consectetur <br>
+                    Lorem ipsum dolor sit amet consectetur <br>
+                    Lorem ipsum dolor sit amet consectetur <br>
+                </p>
+            </div>
+        </div>
+
+        <!-- Contacto -->
+
+        <h2 id="titulo">Contacto</h2>
+        <p id="info">Ponte en contacto con nosotros mediante este simple formulario, y despeja todas tus dudas acerca de
+            nuestro foro. Adelante Informanífate!</p>
+
+        <form id="contacto" class="row g-3">
+            <div class="col-md-6">
+                <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="col-md-6">
+                <label for="exampleInputPassword1" class="form-label">Nombre</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="col-md-12">
+                <label class="form-label">Selecciona su identidad sexual:</label>
+            </div>
+            <div class="col-md-6">
+                <label class="form-check-label">Varón</label>
+                <input type="radio" class="form-check-input" name="opcion" id="opcion1">
+            </div>
+            <div class="col-md-6">
+                <label class="form-check-label">Mujer</label>
+                <input type="radio" class="form-check-input" name="opcion" id="opcion2">
+            </div>
+            <div class="col-md-6">
+                <label class="form-check-label">No-binario</label>
+                <input type="radio" class="form-check-input" name="opcion" id="opcion3">
+            </div>
+            <div class="col-md-6">
+                <label class="form-check-label">Prefiero no decirlo</label>
+                <input type="radio" class="form-check-input" name="opcion" id="opcion4">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+
     </div>
+
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                    <a href="#">
+                        <img src="imagenes/LogoDefinitivo.png" alt="Logo de SLee Dw">
+                    </a>
+                </figure>
+            </div>
+            <div class="box">
+                <h2>SOBRE NOSOTROS</h2>
+                <p>dsdads</p>
+                <p>sdadasdasda</p>
+                <p>dsadsdsadas</p>
+            </div>
+            <div class="box">
+                <h2>SIGUENOS</h2>
+                <div class="red-social">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2024 <b>Manifas.com</b> - Todos los Derechos Reservados.</small>
+        </div>
+    </footer>
 </body>
+<!-- Scripts externos -->
+<script src="https://kit.fontawesome.com/18a64a0083.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 </html>

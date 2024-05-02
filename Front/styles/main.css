@@ -232,6 +232,11 @@ header {
         grid-gap: 30px;
         padding: 35px 0px;
     }
+    .box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 /*Chat messages*/

@@ -13,10 +13,14 @@
 <body>
     <header>
         <img src="imagenes/LogoDefinitivo.png" id="header-logo" alt="">
+        <ul id="menu">
+            <li class="menu-item active" onclick="toggleMenu(this)">Home</li>
+            <li class="menu-item" onclick="toggleMenu(this)">Contacto</li>
+        </ul>
         <button id="btnLogin"><a href="login.html">Iniciar sesión</a></button>
     </header>
 
-    <div id="main">
+    <div id="home">
         <img src="imagenes/ImgBanner/banner3.jpg" id="banner" alt="">
 
         <!-- Quienes somos -->
@@ -89,15 +93,15 @@
                 </p>
             </div>
         </div>
-
-        <!-- Contacto -->
-
+    </div>
+    <!-- Contacto -->
+    <div id="contacto">
         <h2 class="titulo">Contacto</h2>
         <p class="info">Ponte en contacto con nosotros mediante este simple formulario, y despeja todas tus dudas acerca
             de
             nuestro foro. Adelante Informanífate!</p>
 
-        <form id="contacto" class="row g-3">
+        <form id="contact-form" class="row g-3">
             <div class="col-md-12">
                 <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -126,14 +130,13 @@
                 <input type="radio" class="form-check-input" name="opcion" id="opcion4">
             </div>
             <div class="col-md-12">
-                <label class="form-check-label">Mensaje</label>
-                <textarea class="form-control" id="contact-message" rows="3"></textarea>            </div>
+                <label class="form-check-label form-label">Mensaje</label>
+                <textarea class="form-control" id="contact-message" rows="3"></textarea>
+            </div>
 
-            <button type="submit" class="btn btn-primary">Enviar</button>
+            <button type="submit" class="btn">Enviar</button>
         </form>
-
     </div>
-
     <footer class="pie-pagina">
         <div class="grupo-1">
             <div class="box">
@@ -167,5 +170,6 @@
 <!-- Scripts externos -->
 <script src="https://kit.fontawesome.com/18a64a0083.js" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="scripts/toggleMenu.js"></script>
 
 </html>

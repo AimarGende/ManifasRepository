@@ -21,8 +21,8 @@
 
         <!-- Quienes somos -->
 
-        <h2 id="titulo">¿Quiénes somos?</h2>
-        <p id="info">Somos una plataforma comprometida con la neutralidad informativa en medio del tumulto de las
+        <h2 class="titulo">¿Quiénes somos?</h2>
+        <p class="info">Somos una plataforma comprometida con la neutralidad informativa en medio del tumulto de las
             manifestaciones. Nuestra misión es proporcionar un oasis de objetividad en un panorama inundado de opiniones
             y emociones. Nos dedicamos a ofrecer información imparcial y precisa sobre las manifestaciones, sin
             influencias políticas ni sesgos. Nuestra presentación clara y concisa brinda detalles sobre la ubicación,
@@ -39,8 +39,9 @@
 
         <!-- Como funciona -->
 
-        <h2 id="titulo">¿Cómo funcionamos?</h2>
-        <p id="info">Nuestra página opera con un enfoque intuitivo y accesible. Para empezar, simplemente regístrate e
+        <h2 class="titulo">¿Cómo funcionamos?</h2>
+        <p class="info">Nuestra página opera con un enfoque intuitivo y accesible. Para empezar, simplemente regístrate
+            e
             inicia sesión para acceder a todas nuestras funciones. Una vez dentro, te darás cuenta de que la navegación
             es sencilla y directa. Serás recibido por un mapa interactivo que muestra claramente las próximas
             manifestaciones mediante marcadores geolocalizados. Al hacer clic en cada marcador, se desplegará una
@@ -50,8 +51,8 @@
 
         <!-- Suscripciones -->
 
-        <h2 id="titulo">Suscripciones y precios</h2>
-        <p id="info">Elije el plan que más se acomode a tus necesidades.</p>
+        <h2 class="titulo">Suscripciones y precios</h2>
+        <p id="subscription-title">Elije el plan que más se acomode a tus necesidades.</p>
 
         <!-- Cards de suscripciones -->
         <div id="containerCards">
@@ -91,16 +92,17 @@
 
         <!-- Contacto -->
 
-        <h2 id="titulo">Contacto</h2>
-        <p id="info">Ponte en contacto con nosotros mediante este simple formulario, y despeja todas tus dudas acerca de
+        <h2 class="titulo">Contacto</h2>
+        <p class="info">Ponte en contacto con nosotros mediante este simple formulario, y despeja todas tus dudas acerca
+            de
             nuestro foro. Adelante Informanífate!</p>
 
         <form id="contacto" class="row g-3">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <label for="exampleInputPassword1" class="form-label">Nombre</label>
                 <input type="password" class="form-control" id="exampleInputPassword1">
             </div>
@@ -123,6 +125,9 @@
                 <label class="form-check-label">Prefiero no decirlo</label>
                 <input type="radio" class="form-check-input" name="opcion" id="opcion4">
             </div>
+            <div class="col-md-12">
+                <label class="form-check-label">Mensaje</label>
+                <textarea class="form-control" id="contact-message" rows="3"></textarea>            </div>
 
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>

@@ -2,10 +2,10 @@ let mysql = require('mysql');
 let conexion = null;//Variable donde se guardara la conexion de BBDD
 
 let options = {
-    host: 'localhost', //donde se hostea la base, por defecto buscara el puerto 3306
-    user: 'user', //usuario con el que se va a conectar a la base
-    password: 'gerardo', //contraseña del usuario con el que se va a conectar a la base
-    database: '',//Nombre de BBDD
+    host: 'mysql', //donde se hostea la base, por defecto buscara el puerto 3306
+    user: 'root', //usuario con el que se va a conectar a la base
+    password: 'password', //contraseña del usuario con el que se va a conectar a la base
+    database: 'Manifas',//Nombre de BBDD
 };
 
 /**

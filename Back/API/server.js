@@ -8,6 +8,7 @@ const secretKey = 'claveSecreta';
 
 const BBDD = require('./server_modules/BBDD.js')
 const userController = require('./server_modules/userController.js')
+const groupController = require('./server_modules/groupController.js')
 
 app.use(express.static(__dirname));
 app.use(cors());
@@ -58,6 +59,16 @@ app.post('/Register', (req, res) => {
 app.post('/Logout', (req, res) => {
     let userObj = req.body;
     userController.logOut(userObj.email)
+});
+
+app.get('/Grupos', (req, res) => {
+    let grupos = groupController.getGroups();
+    grupos.then(data => {
+        let sendInfo = {
+            groups: data,
+        };
+        res.json(sendInfo)
+    })
 });
 
 const expressServer = http.createServer(app);

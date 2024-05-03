@@ -13,15 +13,7 @@ app.use(express.static(__dirname));
 app.use(cors());
 app.use(express.json());
 
-app.get('/Grupos', (req, res) => {
-    let grupos = groupController.getGroups();
-    grupos.then(data => {
-        let sendInfo = {
-            groups: data,
-        };
-        res.json(sendInfo)
-    })
-});
+
 const expressServer = http.createServer(app);
 // const expressServer = https.createServer(options,app);//Creacion de servidor https
 

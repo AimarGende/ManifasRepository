@@ -19,6 +19,7 @@ app.use(express.json());
  */
 app.post('/Login', (req, res) => {
     let userObj = req.body;
+    console.log(userObj)
     let token = jwt.sign({ user: userObj.email }, secretKey);
     userController.login(userObj, token).then(data => {
         if (data) {
@@ -27,6 +28,7 @@ app.post('/Login', (req, res) => {
                 token: token,
                 state: data,
             }
+            console.log(userInfo)
             res.json(userInfo)
         }
     })

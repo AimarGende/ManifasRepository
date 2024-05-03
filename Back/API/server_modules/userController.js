@@ -1,19 +1,17 @@
-const { resolve } = require('path');
 const BBDD = require('./BBDD.js');
 const crypto = require('crypto');
-const { rejects } = require('assert');
 
 //EJEMPLO
 function login(userObj, token) {
     let conexion = BBDD.getConexion();
     return new Promise((resolve, rejects) => {
+        console.log(userObj.email)
         conexion.query(`SELECT * FROM Usuarios WHERE email='${userObj.email}'`, (error, user) => {
             if (error) {
                 console.log(error);
                 resolve(false);
             }
             else {
-                console.log(user)
                 if (user.length !== 0) {
                     let valid = validatePassword(userObj.password, user[0].password, user[0].salt)
                     if (valid) {
@@ -21,13 +19,24 @@ function login(userObj, token) {
                             idUsuario: user[0].id,
                             token: token,
                         };
-                        conexion.query(`INSERT INTO tokens SET ?`, insertTokenInfo, (error) => {
+                        conexion.query(`SELECT * FROM tokens WHERE idUsuario=${user[0].id}`, (error, tokenRow) => {
                             if (error) {
                                 console.log(error)
                                 resolve(false);
                             }
+                            if (tokenRow.length === 0) {
+                                conexion.query(`INSERT INTO tokens SET ?`, insertTokenInfo, (error) => {
+                                    if (error) {
+                                        console.log(error)
+                                        resolve(false);
+                                    }
+                                    else {
+                                        resolve(true);
+                                    }
+                                });
+                            }
                             else {
-                                resolve(true);
+                                resolve(false)
                             }
                         });
                     }
@@ -59,19 +68,30 @@ function register(userObj, token, groups) {
                         idUsuario: useRow.insertId,
                         token: token,
                     }
-                    conexion.query(`INSERT INTO tokens SET ?`, insertTokenInfo, (error, token) => {
+                    conexion.query(`SELECT * FROM tokens WHERE idUsuario=${useRow.insertId}`, (error, tokenRow) => {
                         if (error) {
                             console.log(error)
                             resolve(false);
                         }
-                        else {
-                            resolve(true);
+                        if (tokenRow.length === 0) {
+                            conexion.query(`INSERT INTO tokens SET ?`, insertTokenInfo, (error, token) => {
+                                if (error) {
+                                    console.log(error)
+                                    resolve(false);
+                                }
+                                else {
+                                    groups.forEach(group => {
+                                        conexion.query(`INSERT INTO Usuarios_Grupos VALUES(${useRow.insertId},${group})`)
+                                    });
+                                    resolve(true);
+                                }
+                            });
                         }
-
+                        else {
+                            resolve(false)
+                        }
                     });
-                    groups.forEach(group => {
-                        conexion.query(`INSERT INTO Usuarios_Grupos VALUES(${useRow.insertId},${group})`)
-                    });
+                    
                 });
             }
         });

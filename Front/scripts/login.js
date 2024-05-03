@@ -69,7 +69,12 @@ function register() {
             return response.json()
         })
         .then(data => {
-            console.log(data)
+            let userObj = data
+            if (data.state) {
+                delete userObj.state
+                localStorage.setItem('token', JSON.stringify(userObj))
+                window.location.assign('main.html')
+            }
         })
 }
 
@@ -95,5 +100,11 @@ function login() {
         })
         .then(data => {
             console.log(data)
+            let userObj = data
+            if (data.state) {
+                delete userObj.state
+                localStorage.setItem('token', JSON.stringify(userObj))
+                window.location.assign('main.html')
+            }
         })
 }

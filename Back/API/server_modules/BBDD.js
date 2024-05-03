@@ -3,8 +3,8 @@ let conexion = null;//Variable donde se guardara la conexion de BBDD
 
 let options = {
     host: 'mysql', //donde se hostea la base, por defecto buscara el puerto 3306
-    user: 'root', //usuario con el que se va a conectar a la base
-    password: 'password', //contraseña del usuario con el que se va a conectar a la base
+    user: 'usuario', //usuario con el que se va a conectar a la base
+    password: 'gerardo', //contraseña del usuario con el que se va a conectar a la base
     database: 'Manifas',//Nombre de BBDD
 };
 

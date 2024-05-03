@@ -7,7 +7,7 @@
 }
 
 body{
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(75,14,154,1) 35%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(90deg, rgba(82,109,130,1)  0%,rgba(221,230,237,1) 35%,rgba(157,178,191,1) 100%) !important;
     font-family: 'Poppins', sans-serif;
 
 }
@@ -23,7 +23,8 @@ form{
     width: 100%;
     border: none;
     border-radius: 50px;
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(75,14,154,1) 35%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(90deg, rgba(82,109,130,1)  0%,rgba(221,230,237,1) 35%,rgba(157,178,191,1) 100%);
+    color:black;
     
 }
 

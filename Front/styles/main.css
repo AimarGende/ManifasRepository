@@ -15,6 +15,7 @@ body {
 header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     position: relative;
     top: 0;
     left: 0;
@@ -22,6 +23,13 @@ header {
     max-width: 100%;
     height: auto;
     background-color: #526D82;
+}
+
+#slogan{
+    font-size: 30px;
+    margin-left: -8%;
+    font-weight: 600;
+    color: white;
 }
 
 #logout {

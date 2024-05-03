@@ -40,7 +40,10 @@ app.post('/Login', (req, res) => {
 app.post('/Register', (req, res) => {
     let userObj = req.body;
     let token = jwt.sign({ user: userObj.email }, secretKey);
-    userController.register(userObj, token).then(data => {
+    let groups = userObj.groups;
+    console.log(userObj)
+    delete userObj.groups
+    userController.register(userObj, token, groups).then(data => {
         if (data) {
             let userInfo = {
                 user: userObj.email,

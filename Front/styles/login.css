@@ -1,17 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
-*{
+
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-  
+
 }
 
-body{
-    background: linear-gradient(90deg, rgba(82,109,130,1)  0%,rgba(221,230,237,1) 35%,rgba(157,178,191,1) 100%) !important;
+body {
+    background: linear-gradient(90deg, rgba(82, 109, 130, 1) 0%, rgba(221, 230, 237, 1) 35%, rgba(157, 178, 191, 1) 100%) !important;
     font-family: 'Poppins', sans-serif;
 
 }
-form{
+
+form {
     border-radius: 20px;
     margin-top: 150px !important;
     width: 24% !important;
@@ -19,32 +21,95 @@ form{
     padding: 50px;
 }
 
-.btn-primary{
+.btn-primary {
     width: 100%;
     border: none;
     border-radius: 50px;
-    background: linear-gradient(90deg, rgba(82,109,130,1)  0%,rgba(221,230,237,1) 35%,rgba(157,178,191,1) 100%);
-    color:black;
-    
+    background: linear-gradient(90deg, rgba(82, 109, 130, 1) 0%, rgba(221, 230, 237, 1) 35%, rgba(157, 178, 191, 1) 100%);
+    color: black;
+
 }
 
-.form-control{
-    color: rgba(0,0,0,.87);
-    border-bottom-color: rgba(0,0,0,.42);
+.form-control {
+    color: rgba(0, 0, 0, .87);
+    border-bottom-color: rgba(0, 0, 0, .42);
     box-shadow: none !important;
     border: none;
     border-bottom: 1px solid;
     border-radius: 4px 4px 0 0;
-    }
- h4{
+}
+
+h4 {
     font-size: 2rem !important;
     font-weight: 700;
- }  
- .form-label{
+}
+
+.form-label {
     font-weight: 800 !important;
- }
+}
+
 @media only screen and (max-width: 600px) {
     form {
         width: 100% !important;
     }
-  }
+}
+
+#group-title {
+    margin-top: 9%;
+    display: block;
+    font-weight: 700;
+}
+
+#grupos {
+    height: 100px;
+    display: block;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.group-text{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 9%
+}
+
+.group-check{
+    margin-right: 30%;
+}
+
+/* width */
+#grupos::-webkit-scrollbar {
+    width: 4.5px;
+}
+
+/* Track */
+#grupos::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+#grupos::-webkit-scrollbar-thumb {
+    background: #27374D;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+#grupos::-webkit-scrollbar-thumb:hover {
+    background: #27374D;
+}
+
+#avoid-text{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#grupos.hidden{
+    display: none;
+}
+
+#group-title.hidden{
+    display: none;
+}

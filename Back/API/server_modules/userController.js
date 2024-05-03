@@ -26,7 +26,7 @@ function login(userObj, token) {
                                 console.log(error)
                                 resolve(false);
                             }
-                            else{
+                            else {
                                 resolve(true);
                             }
                         });
@@ -37,7 +37,7 @@ function login(userObj, token) {
     });
 }
 
-function register(userObj, token) {
+function register(userObj, token, groups) {
     let conexion = BBDD.getConexion();
     let userObjCopy = userObj;
     return new Promise((resolve, rejects) => {
@@ -54,7 +54,7 @@ function register(userObj, token) {
                         console.log(error);
                         resolve(false);
                     }
-                    console.log(useRow.insertId);
+                    console.log(useRow);
                     let insertTokenInfo = {
                         idUsuario: useRow.insertId,
                         token: token,
@@ -68,6 +68,9 @@ function register(userObj, token) {
                             resolve(true);
                         }
 
+                    });
+                    groups.forEach(group => {
+                        conexion.query(`INSERT INTO Usuarios_Grupos VALUES(${useRow.insertId},${group})`)
                     });
                 });
             }

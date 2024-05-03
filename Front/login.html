@@ -15,10 +15,11 @@
     #idRegister {
       display: none;
     }
-    #registro,#login {
+
+    #registro,
+    #login {
       cursor: pointer;
     }
-   
   </style>
 </head>
 
@@ -28,40 +29,44 @@
       <h4 class="text-center">Manifas.com</h4>
       <div class="mb-3 mt-5">
         <label for="exampleInputEmail1" class="form-label">Email</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <input type="email" class="form-control" id="logEmail" aria-describedby="emailHelp">
       </div>
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-        <input type="password" class="form-control" id="exampleInputPassword1">
+        <input type="password" class="form-control" id="logPasswd">
         <div id="registro" class="form-text mt-3">Regístrate</div>
       </div>
 
-      <button type="submit" class="btn btn-primary mt-5"><b>Login</b></button>
+      <button type="submit" class="btn btn-primary mt-3"><b>Login</b></button>
     </form>
   </div>
   <div class="container-fluid" id="idRegister">
     <form class="mx-auto">
-      <h4 class="text-center">Registro</h4>
-      <div class="mb-3 mt-5">
+      <h4 class="text-center">Manifas.com</h4>
+      <div class="mb-3">
         <label for="InputNombre" class="form-label">Nombre</label>
-        <input type="text" class="form-control" id="InputNombre" aria-describedby="emailHelp">
+        <input type="text" class="form-control" id="regName" aria-describedby="emailHelp">
       </div>
-      <div class="mb-3 mt-5">
+      <div class="mb-3">
         <label for="InputEmail1" class="form-label">Email</label>
-        <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp">
+        <input type="email" class="form-control" id="regEmail" aria-describedby="emailHelp">
       </div>
       <div class="mb-3">
         <label for="InputPassword1" class="form-label">Password</label>
-        <input type="password" class="form-control" id="InputPassword1">
+        <input type="password" class="form-control" id="regPasswd">
 
       </div>
       <div class="mb-3">
         <label for="InputConfirmPassword1" class="form-label">Confirma Password</label>
-        <input type="password" class="form-control" id="InputConfirmPassword1">
-        <div id="login" class="form-text mt-3">LogIn</div>
-      </div>
+        <input type="password" class="form-control" id="regConfPasswd">
 
-      <button type="submit" class="btn btn-primary mt-5"><b>Registrar</b></button>
+      </div>
+      <p id="avoid-text">¿Quieres evitar las manifestaciones?<input id="evitar" type="checkbox"></p>
+      <h5 id="group-title">Grupos</h5>
+      <div id="grupos">
+      </div>
+      <div id="login" class="form-text mt-3">LogIn</div>
+      <button type="submit" class="btn btn-primary mt-3"><b>Registrar</b></button>
     </form>
   </div>
 
@@ -86,6 +91,7 @@
       });
     });
   </script>
+  <script src="scripts/login.js"></script>
 </body>
 
 </html>

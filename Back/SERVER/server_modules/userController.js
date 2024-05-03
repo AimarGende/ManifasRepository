@@ -1,6 +1,4 @@
 const BBDD = require('./BBDD.js');
-const bcrypt = require('bcrypt');
-const saltRounds = 10;
 
 //EJEMPLO
 function logOut(user_id) {

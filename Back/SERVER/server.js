@@ -12,8 +12,8 @@ const msgController = require('./server_modules/messageController.js')
 const groupController = require('./server_modules/groupController.js')
 const BBDD = require('./server_modules/BBDD.js')
 
-const port = 8080;
-// const port = 3000;
+// const port = 8080;
+const port = 3000;
 
 app.use(express.static(__dirname));
 app.use(cors());

@@ -14,3 +14,12 @@ function toggleMenu(page) {
         document.getElementById(page.textContent.toLowerCase()).style.display = 'block';
     }
 }
+
+let contactForm = document.getElementById('contact-form');
+
+contactForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    toggleMenu(document.getElementsByClassName('menu-item')[0])
+    alert('Formulario enviado, gracias por su colaboracion!!')
+
+})

@@ -12,6 +12,7 @@ let textBox = document.getElementById('text-box')
 let messagesContainer = document.getElementById('messages');
 let expertChatHead = document.getElementById('expert-chat-head');
 let expertChatForm = document.getElementById('expert-chat-form');
-let userName = 'Usuario';
 let groupSelection = document.getElementById('group-selection');
 let groupHead = document.getElementById('group-head');
+
+let grupos;

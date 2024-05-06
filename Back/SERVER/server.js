@@ -62,5 +62,6 @@ io.on('connection', socket => {
 
     socket.on('newMessage', msgInfo => {
         msgController.insertUserMessageGroup(msgInfo)
+        socket.broadcast.emit('newMessage', msgInfo);
     });
 });

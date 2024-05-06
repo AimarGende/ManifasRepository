@@ -71,7 +71,6 @@ function getGroupMessages(groups) {
                 });
                 Promise.all(promises)
                     .then(messagesWithUserEmails => {
-                        console.log(messagesWithUserEmails)
                         resolve(messagesWithUserEmails);
                     })
                     .catch(error => {

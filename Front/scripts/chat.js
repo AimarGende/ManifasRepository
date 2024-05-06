@@ -23,6 +23,11 @@ expertChatForm.addEventListener('submit', (event) => {
             group: groupHead.className.split(' ')[1],
             message: mensaje,
         };
+        grupos.forEach(grupo => {
+            if (parseInt(groupHead.className.split(' ')[1]) === parseInt(grupo.id)) {
+                grupo.messages.push(JSON.stringify({ message: mensaje, user: username, }))
+            }
+        });
         let mensajePropio = document.createElement('p');
         mensajePropio.innerHTML = `<b>${separatedUser}</b>: ${mensaje}`;
         event.target.children[0].value = '';
@@ -33,6 +38,7 @@ expertChatForm.addEventListener('submit', (event) => {
 });
 
 function CreateGroup(group) {
+    console.log(group)
     let groupDiv = document.createElement('div')
     groupDiv.className += `group group${group.nombre}`
     groupDiv.innerHTML = `<h3>${group.nombre}</h3> <i><small>${group.detalle}</small></i>`
@@ -44,11 +50,11 @@ function CreateGroup(group) {
         group.messages.forEach(msg => {
             let mensaje = document.createElement('p')
             let jsonmsg = JSON.parse(msg);
-            if (jsonmsg.user.split('@'[0] === separatedUser)) {
+            if (jsonmsg.user.split('@')[0] === separatedUser) {
                 mensaje.innerHTML = `<b>${separatedUser}</b>: ${jsonmsg.message}`;
             }
             else {
-                mensaje.innerHTML = `${separatedUser}: ${jsonmsg.message}`
+                mensaje.innerHTML = `${jsonmsg.user.split('@')[0]}: ${jsonmsg.message}`
             }
             messagesContainer.appendChild(mensaje)
         });
@@ -58,5 +64,5 @@ function CreateGroup(group) {
 groupHead.addEventListener('click', () => {
     groupSelection.style.display = 'block'
     messages.innerHTML = ''
-    groupHead.className= 'hidden'
+    groupHead.className = 'hidden'
 })

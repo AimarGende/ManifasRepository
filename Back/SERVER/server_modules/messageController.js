@@ -35,7 +35,6 @@ function insertUserMessageGroup(insertInfo) {
         message
     }
     */
-    console.log(insertInfo)
     conexion.query(`SELECT id FROM Usuarios WHERE email='${insertInfo.user}'`, (error, userId) => {
         if (error) {
             console.log(error)

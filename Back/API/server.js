@@ -3,7 +3,8 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const jwt = require('jsonwebtoken')
-const port = 8080;
+const port = 8081;
+// const port = 8080;
 const secretKey = 'claveSecreta';
 
 const BBDD = require('./server_modules/BBDD.js')
@@ -19,7 +20,6 @@ app.use(express.json());
  */
 app.post('/Login', (req, res) => {
     let userObj = req.body;
-    console.log(userObj)
     let token = jwt.sign({ user: userObj.email }, secretKey);
     userController.login(userObj, token).then(data => {
         if (data) {

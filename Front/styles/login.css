@@ -21,6 +21,15 @@ form {
     padding: 50px;
 }
 
+#idRegister {
+    display: none;
+}
+
+#registro,
+#login {
+    cursor: pointer;
+}
+
 .btn-primary {
     width: 100%;
     border: none;
@@ -67,14 +76,14 @@ h4 {
     overflow-x: hidden;
 }
 
-.group-text{
+.group-text {
     width: 100%;
     display: flex;
     justify-content: space-between;
     margin-left: 9%
 }
 
-.group-check{
+.group-check {
     margin-right: 30%;
 }
 
@@ -100,16 +109,16 @@ h4 {
     background: #27374D;
 }
 
-#avoid-text{
+#avoid-text {
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
-#grupos.hidden{
+#grupos.hidden {
     display: none;
 }
 
-#group-title.hidden{
+#group-title.hidden {
     display: none;
 }

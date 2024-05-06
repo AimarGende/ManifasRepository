@@ -1,5 +1,5 @@
 var locationMap = L.map('locations-map', {
-    center: [43.316893, -1.980888],
+    center: [43.119116, -2.425068],
     zoom: 10,
 });//Mapa para escoger localizacion
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -36,7 +36,8 @@ function toggleInfo(info) {
             waypoints: [
                 L.latLng(43.318251, -1.979724),
                 L.latLng(43.311747, -2.008162),
-            ]
+            ],
+            center: [43.314999, -1.993943]
         }).addTo(routesMap);
         document.getElementsByClassName('leaflet-routing-container')[0].style.display = 'none'
     }

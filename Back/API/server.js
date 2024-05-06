@@ -3,8 +3,8 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const jwt = require('jsonwebtoken')
-// const port = 8081;
-const port = 8080;
+const port = 8081;
+// const port = 8080;
 const secretKey = 'claveSecreta';
 
 const BBDD = require('./server_modules/BBDD.js')

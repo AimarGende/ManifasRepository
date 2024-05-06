@@ -58,6 +58,7 @@ function CreateGroup(group) {
             }
             messagesContainer.appendChild(mensaje)
         });
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
     })
     groupSelection.appendChild(groupDiv)
 }

@@ -16,3 +16,7 @@ let groupSelection = document.getElementById('group-selection');
 let groupHead = document.getElementById('group-head');
 
 let grupos;
+let protestas;
+let ciudades;
+
+let infoUsuario;

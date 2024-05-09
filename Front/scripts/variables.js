@@ -1,5 +1,5 @@
 const username = JSON.parse(localStorage.getItem('token')).user;
-const socket = io.connect('http://localhost:8080/', {
+const socket = io.connect(`http://${urlActual}:8080/`, {
     auth: {
         username
     }

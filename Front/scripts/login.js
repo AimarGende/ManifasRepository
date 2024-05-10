@@ -10,7 +10,7 @@ avoidBox.addEventListener('change', () => {
         check.checked = false
     }
 })
-fetch('http://localhost:8081/Grupos')
+fetch(`http://${urlActual}:8081/Grupos`)
     .then(response => {
         return response.json()
     })
@@ -64,7 +64,7 @@ function register() {
         body: JSON.stringify(user),
     };
 
-    fetch('http://localhost:8081/Register', config)
+    fetch(`http://${urlActual}:8081/Register`, config)
         .then(response => {
             return response.json()
         })
@@ -94,7 +94,7 @@ function login() {
         },
         body: JSON.stringify(user),
     };
-    fetch('http://localhost:8081/Login', config)
+    fetch(`http://${urlActual}:8081/Login`, config)
         .then(response => {
             return response.json()
         })

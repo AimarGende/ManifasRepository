@@ -153,6 +153,7 @@ header {
     padding: 1%;
     width: 85vw;
     border: 1px solid #5c6061;
+    border-radius: 10px;
 }
 
 #titulo-manifa {
@@ -353,14 +354,16 @@ header {
     height: 540px;
     overflow-y: auto;
     overflow-x: hidden;
+    background-color: white;
 }
 
 .group {
     width: 100%;
-    height: 11%;
+    height: auto;
     background-color: #9DB2BF;
     cursor: pointer;
     color: black;
+    padding: 3%;
 }
 
 .group:hover {

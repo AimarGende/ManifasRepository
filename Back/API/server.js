@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const jwt = require('jsonwebtoken')
+// const port = 8081;
 const port = 8080;
 const secretKey = 'claveSecreta';
 
@@ -19,7 +20,6 @@ app.use(express.json());
  */
 app.post('/Login', (req, res) => {
     let userObj = req.body;
-    console.log(userObj)
     let token = jwt.sign({ user: userObj.email }, secretKey);
     userController.login(userObj, token).then(data => {
         if (data) {
@@ -63,7 +63,8 @@ app.post('/Register', (req, res) => {
  */
 app.post('/Logout', (req, res) => {
     let userObj = req.body;
-    userController.logOut(userObj.email)
+    console.log(userObj)
+    // userController.logOut(userObj.email)
 });
 
 app.get('/Grupos', (req, res) => {

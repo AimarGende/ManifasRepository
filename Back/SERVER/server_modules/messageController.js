@@ -14,7 +14,11 @@ function getUserMessages(email) {
                     resolve(false);
                 }
                 else {
-                    resolve(mensajes)
+                    let messageInfo = {
+                        messages:mensajes,
+                        user:email,
+                    }
+                    resolve(messageInfo)
                     console.log(mensajes)
                 }
             })
@@ -35,18 +39,15 @@ function insertUserMessageGroup(insertInfo) {
         if (error) {
             console.log(error)
         }
-        conexion.query(`SELECT id FROM Grupos WHERE email='${insertInfo.user}'`, (error, groupId) => {
+        conexion.query(`INSERT INTO Mensajes (detalle,fecha,idUsuario,idGrupo) VALUES ('${insertInfo.message}',NOW(),${userId[0].id},${insertInfo.group})`, (error) => {
             if (error) {
                 console.log(error)
             }
-            conexion.query(`INSERT INTO Mensajes (detalle,fecha,idUsuario,idGrupo) VALUES ('${message}',NOW(),${userId[0].id},${groupId[0].id})'`, (error) => {
-                if (error) {
-                    console.log(error)
-                }
-            })
         })
+
     })
 }
+
 
 module.exports.getUserMessages = getUserMessages;
 module.exports.insertUserMessageGroup = insertUserMessageGroup;

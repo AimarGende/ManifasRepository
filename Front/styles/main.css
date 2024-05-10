@@ -188,10 +188,9 @@ header {
 
 .pie-pagina .grupo-1 {
     width: 100%;
-    max-width: 1200px;
     margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    justify-content: space-around;
     grid-gap: 50px;
     padding: 20px 0px;
 }
@@ -204,13 +203,10 @@ header {
     align-items: center;
 }
 
-.pie-pagina .grupo-1 .box figure img {
-    width: 250px;
-}
-
 .pie-pagina .grupo-1 .box h2 {
     color: black;
     font-size: 20px;
+    
 }
 
 .pie-pagina .grupo-1 .box p {
@@ -221,15 +217,17 @@ header {
 .pie-pagina .grupo-1 .red-social a {
     display: inline-block;
     text-decoration: none;
-    width: 45px;
-    height: 45px;
-    line-height: 45px;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
     color: black;
-    margin-right: 10px;
+    margin-right: 20px;
+    margin-top: px;
     background-color: #27374D;
     text-align: center;
     transition: all 300ms ease;
 }
+
 
 .pie-pagina .grupo-1 .red-social a:hover {
     color: #9DB2BF;

@@ -25,7 +25,7 @@ form {
     width: 100%;
     border: none;
     border-radius: 50px;
-    background: linear-gradient(90deg, rgba(82, 109, 130, 1) 0%, rgba(221, 230, 237, 1) 35%, rgba(157, 178, 191, 1) 100%);
+    background: linear-gradient(90deg, #526d82 0%, #dde6ed 35%, rgba(157, 178, 191, 1) 100%);
     color: black;
 
 }

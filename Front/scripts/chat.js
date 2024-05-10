@@ -3,6 +3,7 @@ expertChatHead.addEventListener('click', () => {
 })
 
 function toggleMenu() {
+    expertChatHead.style.backgroundColor='#526D82'
     upcomingMessages.classList.toggle('hidden');
     expertChatHead.classList.toggle('hidden');
     messagesContainer.classList.toggle('hidden');

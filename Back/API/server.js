@@ -63,7 +63,8 @@ app.post('/Register', (req, res) => {
  */
 app.post('/Logout', (req, res) => {
     let userObj = req.body;
-    userController.logOut(userObj.email)
+    console.log(userObj)
+    // userController.logOut(userObj.email)
 });
 
 app.get('/Grupos', (req, res) => {

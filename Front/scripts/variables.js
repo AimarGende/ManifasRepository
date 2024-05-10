@@ -14,9 +14,19 @@ let expertChatHead = document.getElementById('expert-chat-head');
 let expertChatForm = document.getElementById('expert-chat-form');
 let groupSelection = document.getElementById('group-selection');
 let groupHead = document.getElementById('group-head');
+let logOut = document.getElementById('logout');
+
+logOut.addEventListener('click', () => {
+    logout()
+})
 
 let grupos;
 let protestas;
 let ciudades;
 
 let infoUsuario;
+
+function logout() {
+    localStorage.removeItem('token')
+    window.location.assign('index.html')
+}

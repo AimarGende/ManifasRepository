@@ -23,7 +23,7 @@ function getUser(email) {
     let conexion = BBDD.getConexion();
 
     return new Promise((resolve, reject) => {
-        conexion.query(`SELECT evita FROM usuarios WHERE email='${email}'`, (error, user)=>{
+        conexion.query(`SELECT evita FROM Usuarios WHERE email='${email}'`, (error, user)=>{
             if(error){
                 console.log(error)
                 resolve(false)

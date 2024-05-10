@@ -39,7 +39,7 @@ function getUserGroups(email) {
 function getGroupMessages(groups) {
     let conexion = BBDD.getConexion();
 
-    let select = 'SELECT * FROM mensajes WHERE idGrupo='
+    let select = 'SELECT * FROM Mensajes WHERE idGrupo='
     for (let i = 0; i < groups.length; i++) {
         if (i === groups.length - 1 || groups.length === 1) {
             select += `${groups[i].id};`
@@ -57,7 +57,7 @@ function getGroupMessages(groups) {
                 // Recorrer cada mensaje para obtener el correo electrónico del usuario
                 let promises = msgs.map(msg => {
                     return new Promise((resolveMsg, rejectMsg) => {
-                        conexion.query(`SELECT email FROM usuarios WHERE id = ${msg.idUsuario}`, (error, email) => {
+                        conexion.query(`SELECT email FROM Usuarios WHERE id = ${msg.idUsuario}`, (error, email) => {
                             if (error) {
                                 console.log(error);
                                 rejectMsg(error);

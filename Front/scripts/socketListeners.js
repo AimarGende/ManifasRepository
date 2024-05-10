@@ -12,6 +12,9 @@ socket.on('newMessage', msgInfo => {
                 let mensaje = document.createElement('p')
                 mensaje.innerHTML = `${msgInfo.user.split('@')[0]}: ${msgInfo.message}`
                 messagesContainer.appendChild(mensaje)
+                console.log(grupo.messages)
+                console.log(msgInfo)
+                grupo.messages.push(JSON.stringify({ message: msgInfo.message, user: msgInfo.user }))
             }
         });
         messagesContainer.scrollTop = messagesContainer.scrollHeight;

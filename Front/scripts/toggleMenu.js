@@ -23,3 +23,5 @@ contactForm.addEventListener('submit', (event) => {
     alert('Formulario enviado, gracias por su colaboracion!!')
 
 })
+
+
